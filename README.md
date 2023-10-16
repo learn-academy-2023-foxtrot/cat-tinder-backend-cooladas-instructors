@@ -1,24 +1,93 @@
-# README
+## Rails API
+- The API will cover the M & C: model and controller
+- Generating a resource will create model, view, controller, and routes.
+- However, we will use React for the views.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Process to create and test the API functionality
+1. Create an empty github repo √
+2. Create a local rails application √
+3. Connected the github repo and the local rails app √
+4. Add all the applicable dependencies √
+5. Create a resource
+6. Add seeds
+7. Enable CORS
 
-Things you may want to cover:
+## Create a resource
+- $ rails generate resource FlowMaster name:string age:integer enjoys:text image:text
+- $ rails db: migrate
 
-* Ruby version
+## Rspec testing suite
+- To see all files: $ rspec spec
+- To specify one file, give the file path: $ rspec spec/requests/flow_masters_spec.rb
 
-* System dependencies
+6. Add seeds
 
-* Configuration
+- rails console (temporary method create mock data)
+> FlowMaster.create(name:'BoneCrumble', age:27, enjoys:'snacks and ba
+rs', image:'https://images.unsplash.com/photo-1497562187797-ec8cb333f512?ixlib=r
+b-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cmFwcGVyJTIwd2l0aCUyMHZpdGFtaW5zfGVufDB
+8fDB8fHww&auto=format&fit=crop&w=400&q=60')
 
-* Database creation
+- If the database is dropped or shared, the mock data created in rails console would not persist. Use seeds file to maintain mock data.
 
-* Database initialization
+### seeds (idempotent method to create mock data)
+- Create a array with objects that contain the attributes required for the schema
+```rb
+  # db/seeds.rb
+  rappers = [
+    {
+      name:'BoneCrumble',
+      age: 27,
+      enjoys:'snacks and bars',
+      image: 'https://images.unsplash.com/photo-1497562187797-ec8cb333f512?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cmFwcGVyJTIwd2l0aCUyMHZpdGFtaW5zfGVufDB8fDB8fHww&auto=format&fit=crop&w=400&q=60'
+    },
+    {
+      name: 'RTO',
+      age: 42,
+      enjoys: 'eating whack rappers for breakfast',
+      image: 'https://images.unsplash.com/photo-1573865526739-10659fec78a5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1015&q=80'
+    },
+    {
+      name: 'Madam',
+      age: 45,
+      enjoys: 'Leaving chalk dust on the pupils',
+      image: 'https://images.unsplash.com/photo-1492370284958-c20b15c692d2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1049&q=80'
+    }
+  ]
+```
+- use `each` method to iterate across each object in the array and create a data entry using the attributes from the object 
+  - as well as provide a printout to the console to show that the entry was made successfully
+```rb
+  rappers.each do |each_rapper|
+    FlowMaster.create each_rapper
+    puts "creating flow master #{each_rapper}"
+  end
+```
 
-* How to run the test suite
+7. Enable CORS
+- Add the following code to the ApplicationController
+```rb
+  # app/controllers/application_controller.rb
+  skip_before_action :verify_authenticity_token
+```
+### Enable CORS
+- Add `rack-cors` gem to the Gemfile
+- Create a cors.rb file in config/initializers directory
+- Add the following code to that file
+```rb
+# Avoid CORS issues when API is called from the frontend app.
+# Handle Cross-Origin Resource Sharing (CORS) in order to accept cross-origin AJAX requests.
 
-* Services (job queues, cache servers, search engines, etc.)
+# Read more: https://github.com/cyu/rack-cors
 
-* Deployment instructions
+Rails.application.config.middleware.insert_before 0, Rack::Cors do
+  allow do
+    origins '*'  # <- change this to allow requests from any domain while in development.
 
-* ...
+    resource '*',
+      headers: :any,
+      methods: [:get, :post, :put, :patch, :delete, :options, :head]
+  end
+end
+```
+- To add required dependencies for the cors: $ bundle
