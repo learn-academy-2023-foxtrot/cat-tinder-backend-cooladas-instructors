@@ -91,3 +91,14 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
 end
 ```
 - To add required dependencies for the cors: $ bundle
+
+
+## API Endpoints
+- Stub out the endpoints
+```rb
+  def index
+  end
+```
+- Make a Test for the endpoint
+
+- Provide the code to make the test pass
