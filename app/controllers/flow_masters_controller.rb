@@ -1,6 +1,8 @@
 class FlowMastersController < ApplicationController
   # to see all instances
   def index
+    rappers = FlowMaster.all
+    render json: rappers
   end
 
   # to save a new instance
@@ -10,7 +12,7 @@ class FlowMastersController < ApplicationController
   # to modify an existing instance
   def update
   end
-  
+
   # to remove an existing instance
   def destroy
   end
