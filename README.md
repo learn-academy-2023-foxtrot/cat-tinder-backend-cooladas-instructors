@@ -8,30 +8,26 @@
 2. Create a local rails application √
 3. Connected the github repo and the local rails app √
 4. Add all the applicable dependencies √
-5. Create a resource
-6. Add seeds
-7. Enable CORS
+5. Create a resource √
+6. Add seeds √
+7. Enable CORS √
 
 ## Create a resource
-- $ rails generate resource FlowMaster name:string age:integer enjoys:text image:text
-- $ rails db: migrate
+- $ `rails generate resource FlowMaster name:string age:integer enjoys:text image:text`
+- $ `rails db: migrate`
 
 ## Rspec testing suite
-- To see all files: $ rspec spec
-- To specify one file, give the file path: $ rspec spec/requests/flow_masters_spec.rb
+- To see all files: $ `rspec spec`
+- To specify one file, give the file path: $ `rspec spec/requests/flow_masters_spec.rb`
 
-6. Add seeds
-
-- rails console (temporary method create mock data)
-> FlowMaster.create(name:'BoneCrumble', age:27, enjoys:'snacks and ba
-rs', image:'https://images.unsplash.com/photo-1497562187797-ec8cb333f512?ixlib=r
-b-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cmFwcGVyJTIwd2l0aCUyMHZpdGFtaW5zfGVufDB
-8fDB8fHww&auto=format&fit=crop&w=400&q=60')
-
+6. Add seeds  
+### temporary method to create mock data
+- $ `rails console` 
+> FlowMaster.create(name:'BoneCrumble', age:27,enjoys:'snacks and bars', image:'https://images.unsplash.com/photo-1497562187797-ec8cb333f512?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cmFwcGVyJTIwd2l0aCUyMHZpdGFtaW5zfGVufDB8fDB8fHww&auto=format&fit=crop&w=400&q=60')
 - If the database is dropped or shared, the mock data created in rails console would not persist. Use seeds file to maintain mock data.
 
 ### seeds (idempotent method to create mock data)
-- Create a array with objects that contain the attributes required for the schema
+- Create an array with objects that contain the attributes required for the schema
 ```rb
   # db/seeds.rb
   rappers = [
@@ -90,4 +86,16 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
   end
 end
 ```
-- To add required dependencies for the cors: $ bundle
+- To add required dependencies for the cors: $ `bundle`
+
+
+## API Endpoints
+- Stub out the endpoints
+```rb
+  def index
+  end
+```
+- Make a Test for the endpoint
+- See it fail
+- Provide the code to make the test pass
+- See it pass
