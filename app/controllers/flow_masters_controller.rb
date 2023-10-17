@@ -8,7 +8,11 @@ class FlowMastersController < ApplicationController
   # to save a new instance
   def create
     new_rapper = FlowMaster.create(rapper_params)
-    render json: new_rapper
+    if new_rapper.valid?
+      render json: new_rapper
+    else
+      render json: new_rapper.errors, status: 422
+    end
   end
 
   # to modify an existing instance
