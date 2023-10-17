@@ -99,3 +99,18 @@ end
 - See it fail
 - Provide the code to make the test pass
 - See it pass
+
+## API Validations
+- Create the rspec test for the model (spec/models/flow_master_spec.rb)
+- See it fail 
+- Provide the validation to make it pass (app/models/flow_master.rb)
+- See it pass
+
+
+### mock data
+{
+  name: 'Young Spatula',
+  age: 24,
+  enjoys: 'singing while cooking and creating bars',
+  image: 'https://images.unsplash.com/photo-1492370284958-c20b15c692d2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1049&q=80'
+}
