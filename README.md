@@ -101,11 +101,17 @@ end
 - See it pass
 
 ## API Validations
+### model
 - Create the rspec test for the model (spec/models/flow_master_spec.rb)
 - See it fail 
 - Provide the validation to make it pass (app/models/flow_master.rb)
 - See it pass
 
+### controller
+- Create the rspec test for the controller(spec/requests/flow_masters_spec.rb)
+- See it fail 
+- Provide the code to make it pass (app/controllers/flow_masters_controller.rb)
+- See it pass
 
 ### mock data
 {
