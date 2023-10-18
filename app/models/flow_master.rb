@@ -1,4 +1,4 @@
 class FlowMaster < ApplicationRecord
-  validates :name, :age, :enjoys, presence: true
+  validates :name, :age, :enjoys, :image, presence: true
   validates :enjoys, length: { minimum: 10 }
 end
