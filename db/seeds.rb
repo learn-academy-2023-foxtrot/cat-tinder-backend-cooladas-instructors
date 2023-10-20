@@ -8,28 +8,28 @@
 
 rappers = [
   {
-    name:'BoneCrumble',
+    name:'Bone Mumble',
     age: 27,
     enjoys:'snacks and bars',
-    image: 'https://images.unsplash.com/photo-1497562187797-ec8cb333f512?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cmFwcGVyJTIwd2l0aCUyMHZpdGFtaW5zfGVufDB8fDB8fHww&auto=format&fit=crop&w=400&q=60'
+    image: 'https://consequence.net/wp-content/uploads/2014/04/drakesimpsons.jpg'
   },
   {
-    name: 'RTO',
+    name: 'R TUNE U',
     age: 42,
     enjoys: 'eating whack rappers for breakfast',
-    image: 'https://images.unsplash.com/photo-1573865526739-10659fec78a5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1015&q=80'
+    image: 'https://i0.wp.com/i.pinimg.com/originals/60/1d/7d/601d7d19cf4155d147dddafbb510a82d.jpg'
   },
   {
     name: 'Madam',
     age: 45,
     enjoys: 'Leaving chalk dust on the pupils',
-    image: 'https://images.unsplash.com/photo-1492370284958-c20b15c692d2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1049&q=80'
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJx3jKJ5J4RQDAiflTfXlzni6x1vB-edDb5Q&usqp=CAU'
   },
   {
     name: 'MC SuchAndSuch',
     age: 18,
     enjoys: 'Rap after chilled glass bottles of water ',
-    image: 'https://images.unsplash.com/photo-1492370284958-c20b15c692d2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1049&q=80'
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRA1NIrhdEjWDY3McV488Xya3TvmIhcCOhevA&usqp=CAU'
   }
 ]
 
