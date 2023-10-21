@@ -17,6 +17,13 @@ class FlowMastersController < ApplicationController
 
   # to modify an existing instance
   def update
+    edit_rapper = FlowMaster.find(params[:id])
+    edit_rapper.update(rapper_params)
+    if edit_rapper.valid?
+      render json: edit_rapper
+    else
+      render json: edit_rapper.errors, status: 422
+    end
   end
 
   # to remove an existing instance
