@@ -28,6 +28,13 @@ class FlowMastersController < ApplicationController
 
   # to remove an existing instance
   def destroy
+    delete_rapper = FlowMaster.find(params[:id])
+    rappers = FlowMaster.all
+    if delete_rapper.destroy
+      render json: rappers
+    else
+      render json: delete_rapper.errors
+    end
   end
 
   private
